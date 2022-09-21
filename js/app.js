@@ -139,25 +139,36 @@ function headerRender() {
 
 }
 
-function footerRender() {
+// function footerRender() {
 
-  let tBody = document.createElement('tbody');
-  tbl.appendChild(tBody);
+//   let tBody = document.createElement('tbody');
+//   tbl.appendChild(tBody);
 
-  let tableRow2 = document.createElement('tr');
-  tBody.appendChild(tableRow2);
+//   let tableRow2 = document.createElement('tr');
+//   tBody.appendChild(tableRow2);
 
-  for (let i = 0; i < hours.length; i++) {
-    let totalPerHour = 0;
+//   let tdElem4 = document.createElement('td');
+//   tdElem4.textContent = 'Total:';
+//   tableRow2.appendChild(tdElem4);
 
-    for (let j = 0; j < hours.length;) {
-      totalPerHour += cityArr[j].cookiesPerHour[i];
-    }
-    let tdElem4 = document.createElement('td');
-    tdElem4.textContent = totalPerHour;
-    tableRow2.appendChild(tdElem4);
-  }
-}
+//   for (let i = 0; i < hours.length; i++) {
+//     let totalPerHour = 0;
+
+//     for (let j = 0; j < hours.length;) {
+//       totalPerHour += cityArr[j].cookiesPerHour[i];
+
+/*
+i=0 seattle
+
+
+*/
+
+//       let tdElem4 = document.createElement('td');
+//       tdElem4.textContent = totalPerHour;
+//       tableRow2.appendChild(tdElem4);
+//     }
+//   }
+// }
 
 
 // Creating objects using constructor
@@ -180,5 +191,5 @@ function renderMethods() {
 // invoke the renderMethods()
 renderMethods();
 headerRender();
-footerRender();
+// footerRender();
 console.log(footerRender);
