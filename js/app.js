@@ -1,11 +1,10 @@
 // --- Global Variables ---
 const hours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
 let cityArr = [];
-
+let locationTotals = [];
 
 // --- main parent ---
 let salesSection = document.getElementById('sales-sect');
-let tableSection = document.getElementById('table-sect');
 
 // --- Helper Functions ---
 
@@ -80,27 +79,21 @@ City.prototype.render = function() {
   liTotal.textContent = `Total: ${sum} cookies`;
   ulElem.appendChild(liTotal);
 
+};
 
 
+function headerRender() {
 
-  // --- creating TABLE to display location and cookie sales per hour ---
-
-  // creating section for table
-
-
-  // grabbing table in the html
-  let salesTable = document.getElementById('sales-table');
-  tableSection.appendChild(salesTable);
-
+  let tableSection = document.getElementById('table-sect');
 
   let tHead = document.createElement('thead');
-  salesTable.appendChild(tHead);
+  tableSection.appendChild(tHead);
 
   let tableRow = document.createElement('tr');
   tHead.appendChild(tableRow);
 
-  let tBody = document.createElement('tbody');
-  salesTable.appendChild(tBody);
+  // let tBody = document.createElement('tbody');
+  // salesTable.appendChild(tBody);
 
   let thElem = document.createElement('th');
   thElem.textContent = ' ';
@@ -108,20 +101,13 @@ City.prototype.render = function() {
 
   for (let i = 0; i < hours.length; i++) {
 
-    let tdElem = document.createElement('td');
+    let tdElem = document.createElement('th');
     tdElem.textContent = hours[i];
     tableRow.appendChild(tdElem);
-
-    for (let i = 0; i < City.length; i++) {
-      tdElem.textContent = this.cookiesPerHour[i];
-    }
-
-    tableRow.appendChild(thElem);
-
+    locationTotals[i] = 0;
   }
 
-
-};
+}
 
 
 // Creating objects using constructor
@@ -143,3 +129,4 @@ function renderMethods() {
 
 // invoke the renderMethods()
 renderMethods();
+headerRender();
