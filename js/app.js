@@ -175,4 +175,5 @@ function renderMethods() {
 renderMethods();
 headerRender();
 totalTbl();
+dataTbl();
 console.log(City.cookiesPerHour.length);
