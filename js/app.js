@@ -141,11 +141,10 @@ function headerRender() {
 
 function footerRender() {
 
-  let tBody = document.createElement('tbody');
-  tbl.appendChild(tBody);
+  let tFoot = document.createElement('tfoot');
 
   let tableRow2 = document.createElement('tr');
-  tBody.appendChild(tableRow2);
+  tFoot.appendChild(tableRow2);
 
   let tdElem4 = document.createElement('td');
   tdElem4.textContent = 'Total:';
@@ -157,10 +156,12 @@ function footerRender() {
     for (let j = 0; j < cityArr.length;) {
       totalPerHour += cityArr[j].cookiesPerHour[i];
     }
-    let tdElem4 = document.createElement('td');
-    tdElem4.textContent = totalPerHour;
-    tableRow2.appendChild(tdElem4);
+    let tdElem5 = document.createElement('td');
+    tdElem5.textContent = totalPerHour;
+    tableRow2.appendChild(tdElem5);
   }
+  tFoot.appendChild(tableRow2);
+  tbl.appendChild(tFoot);
 }
 
 
@@ -184,5 +185,5 @@ function renderMethods() {
 // invoke the renderMethods()
 renderMethods();
 headerRender();
-// footerRender();
-console.log(footerRender);
+footerRender();
+// console.log(footerRender);
