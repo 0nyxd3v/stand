@@ -1,11 +1,10 @@
 // --- Global Variables ---
 const hours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
 let cityArr = [];
-
+let locationTotals = [];
 
 // --- main parent ---
 let salesSection = document.getElementById('sales-sect');
-let tableSection = document.getElementById('table-sect');
 
 // --- Helper Functions ---
 
@@ -80,53 +79,64 @@ City.prototype.render = function() {
   liTotal.textContent = `Total: ${sum} cookies`;
   ulElem.appendChild(liTotal);
 
+};
 
 
+function headerRender() {
 
-  // --- creating TABLE to display location and cookie sales per hour ---
-
-  // creating section for table
-
-
-  // grabbing table in the html
-  let salesTable = document.getElementById('sales-table');
-  tableSection.appendChild(salesTable);
-
+  let tableSection = document.getElementById('table-sect');
 
   let tHead = document.createElement('thead');
-  salesTable.appendChild(tHead);
+  tableSection.appendChild(tHead);
 
   let tableRow = document.createElement('tr');
   tHead.appendChild(tableRow);
 
-  let tBody = document.createElement('tbody');
-  salesTable.appendChild(tBody);
+  let thElem = document.createElement('th');
+  thElem.textContent = ' ';
+  tableRow.appendChild(thElem);
 
-  for (let i = 0; i < 17; i++) {
+  for (let i = 0; i < hours.length; i++) {
+
     let thElem = document.createElement('th');
-    let tdElem = document.createElement('td');
-
-    // create th element
-    if (i === 0) {
-      thElem.textContent = ' ';
-    } else if (i === 16) {
-      thElem.textContent = 'Daily Location Total';
-    } else {
-      thElem.textContent = hours[i];
-
-      tdElem.textContent = this.cookiesPerHour[i];
-    }
-
-
-
-
+    thElem.textContent = hours[i];
     tableRow.appendChild(thElem);
-    tableRow.appendChild(tdElem);
+    locationTotals[i] = 0;
+  }
+  thElem.textContent = 'Daily Total';
+  tableRow.appendChild(thElem);
 
+}
+
+function dataTbl() {
+
+  // let tableSection = document.getElementById('table-sect');
+  let tbl = document.getElementById('sales-table');
+
+  let tBody = document.createElement('tbody');
+  // tableSection.appendChild(tBody);
+  tbl.appendChild(tBody);
+
+  let tableRow = document.createElement('tr');
+  tBody.appendChild(tableRow);
+
+  let tdElem = document.createElement('td');
+
+
+  for (let i = 0; i < cityArr.length; i++) {
+    tdElem.textContent = cityArr[i].location;
+    tableRow.appendChild(tdElem);
+    // locationTotals[i] = 0;
+
+
+    for (let j = 0; j < cityArr.cookiesPerHour.length; j++) {
+      tdElem.textContent = cityArr[i].cookiesPerHour[j];
+      tableRow.appendChild(tdElem);
+      locationTotals[i] = 0;
+    }
   }
 
-
-};
+}
 
 
 // Creating objects using constructor
@@ -148,3 +158,6 @@ function renderMethods() {
 
 // invoke the renderMethods()
 renderMethods();
+headerRender();
+dataTbl();
+console.log(City.cookiesPerHour.length);
