@@ -97,51 +97,52 @@ function headerRender() {
   let tableRow = document.createElement('tr');
   tHead.appendChild(tableRow);
 
-  let thElem = document.createElement('th');
-  thElem.textContent = ' ';
-  tableRow.appendChild(thElem);
+  let thElem1 = document.createElement('th');
+  thElem1.textContent = ' ';
+  tableRow.appendChild(thElem1);
 
   for (let i = 0; i < hours.length; i++) {
 
-    let thElem = document.createElement('th');
-    thElem.textContent = hours[i];
-    tableRow.appendChild(thElem);
+    let thElem2 = document.createElement('th');
+    thElem2.textContent = hours[i];
+    tableRow.appendChild(thElem2);
     locationTotals[i] = 0;
   }
-  thElem.textContent = 'Daily Total';
-  tableRow.appendChild(thElem);
+  let thElem3 = document.createElement('th');
+  thElem3.textContent = 'Daily Total';
+  tableRow.appendChild(thElem3);
 
 }
 
-// function dataTbl() {
+function dataTbl() {
 
-//   // let tableSection = document.getElementById('table-sect');
-//   let tbl = document.getElementById('sales-table');
+  // let tableSection = document.getElementById('table-sect');
+  let tbl = document.getElementById('sales-table');
 
-//   let tBody = document.createElement('tbody');
-//   // tableSection.appendChild(tBody);
-//   tbl.appendChild(tBody);
+  let tBody = document.createElement('tbody');
+  // tableSection.appendChild(tBody);
+  tbl.appendChild(tBody);
 
-//   let tableRow = document.createElement('tr');
-//   tBody.appendChild(tableRow);
+  let tableRow = document.createElement('tr');
+  tBody.appendChild(tableRow);
 
-//   let tdElem = document.createElement('td');
-
-
-//   for (let i = 0; i < cityArr.length; i++) {
-//     tdElem.textContent = cityArr[i].location;
-//     tableRow.appendChild(tdElem);
-//     // locationTotals[i] = 0;
+  let tdElem = document.createElement('td');
 
 
-//     for (let j = 0; j < cityArr.cookiesPerHour.length; j++) {
-//       tdElem.textContent = cityArr[i].cookiesPerHour[j];
-//       tableRow.appendChild(tdElem);
-//       locationTotals[i] = 0;
-//     }
-//   }
+  for (let i = 0; i < cityArr.length; i++) {
+    tdElem.textContent = cityArr[i].location;
+    tableRow.appendChild(tdElem);
+    // locationTotals[i] = 0;
 
-// }
+
+    for (let j = 0; j < cityArr.cookiesPerHour.length; j++) {
+      tdElem.textContent = cityArr[i].cookiesPerHour[j];
+      tableRow.appendChild(tdElem);
+      locationTotals[i] = 0;
+    }
+  }
+
+}
 
 
 // Creating objects using constructor
