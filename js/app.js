@@ -108,17 +108,12 @@ City.prototype.render = function() {
   let tdElem2 = document.createElement('td');
   tdElem2.textContent = sum;
   trElem1.appendChild(tdElem2);
-
-
 };
 
 
 // ------ worked with TA Brandon on headerRender() ------
 // modified some part to see if it works
 function headerRender() {
-
-  // let tbl = document.getElementById('sales-table'); // moved to global
-  // tableSection.appendChild(tbl); // moved to global
 
   let tHead = document.createElement('thead');
   // tableSection.appendChild(tHead); // orig
@@ -146,10 +141,6 @@ function headerRender() {
 
 function footerRender() {
 
-  // let tableSection = document.getElementById('table-sect');
-  let tbl = document.getElementById('sales-table');
-  // tableSection.appendChild(tbl);
-
   let tBody = document.createElement('tbody');
   // tableSection.appendChild(tBody);
   tbl.appendChild(tBody);
@@ -157,15 +148,18 @@ function footerRender() {
   let tableRow2 = document.createElement('tr');
   tBody.appendChild(tableRow2);
 
-
-
-  for (let i = 0; i < cityArr.length; i++) {
+  for (let i = 0; i < cityArr.cookiesPerHour.length; i++) {
     let totalPerHour = 0;
-    for (let i = 0; i < cityArr.length; i++) {
-      for (let j = 0; j < cityArr[i].cookiesPerHour.length;) {
-        totalPerHour += cityArr[i].cookiesPerHour[j]
-      }
+    // let trElem2 = document.createElement('tr');
+    for (let j = 0; j < cityArr[i].cookiesPerHour.length;) {
+      totalPerHour += cityArr[j].cookiesPerHour[i];
+
+      let tdElem4 = document.createElement('td');
+      tdElem4.textContent = totalPerHour;
+      tableRow2.appendChild(tdElem4);
     }
+
+  }
 }
 
 
@@ -190,4 +184,4 @@ function renderMethods() {
 renderMethods();
 headerRender();
 footerRender();
-console.log(City[0].cookiesPerHour.length);
+console.log(cityArr.cookiesPerHour.length);
