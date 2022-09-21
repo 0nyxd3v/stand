@@ -106,31 +106,6 @@ function headerRender() {
 
 }
 
-function totalTbl() {
-
-  let tableSection = document.getElementById('table-sect');
-
-  let tBody = document.createElement('tbody');
-  tableSection.appendChild(tBody);
-
-  let tableRow = document.createElement('tr');
-  tBody.appendChild(tableRow);
-
-  let tdElem = document.createElement('td');
-  tdElem.textContent = 'Daily Total';
-  tableRow.appendChild(tdElem);
-
-  for (let i = 0; i < cityArr.length; i++) {
-    let total = 0;
-    for (let j = 0; j < City.cookiesPerHour.length; j++) {
-      total += cityArr[i].cookiesPerHour[j];
-    }
-    tdElem.textContent = total;
-    tableRow.appendChild(tdElem);
-    locationTotals[i] = 0;
-  }
-}
-
 function dataTbl() {
 
   let tableSection = document.getElementById('table-sect');
@@ -144,11 +119,15 @@ function dataTbl() {
   let tdElem = document.createElement('td');
 
 
-  for (let i = 0; i < hours.length; i++) {
-
-    tdElem.textContent = cityArr.cookiesPerHour;
+  for (let i = 0; i < cityArr.length; i++) {
+    tdElem.textContent = cityArr[i].location;
     tableRow.appendChild(tdElem);
-    locationTotals[i] = 0;
+
+    for (let j = 0; j < hours.length; j++) {
+      tdElem.textContent = cityArr.cookiesPerHour;
+      tableRow.appendChild(tdElem);
+      locationTotals[i] = 0;
+    }
   }
 
 }
@@ -174,6 +153,5 @@ function renderMethods() {
 // invoke the renderMethods()
 renderMethods();
 headerRender();
-totalTbl();
 dataTbl();
 console.log(City.cookiesPerHour.length);
