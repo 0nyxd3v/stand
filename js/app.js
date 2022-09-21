@@ -102,16 +102,18 @@ City.prototype.render = function() {
   let tBody = document.createElement('tbody');
   salesTable.appendChild(tBody);
 
-  for (let i = 0; i < 17; i++) {
-    let thElem = document.createElement('th');
-    let tdElem = document.createElement('td');
+  let thElem = document.createElement('th');
+  thElem.textContent = ' ';
+  tableRow.appendChild(thElem);
 
-    if (i === 0) {
-      thElem.textContent = ' ';
-    } else if (i === 16) {
-      thElem.textContent = 'Daily Location Total';
-    } else {
-      thElem.textContent = hours[i];
+  for (let i = 0; i < hours.length; i++) {
+
+    let tdElem = document.createElement('td');
+    tdElem.textContent = hours[i];
+    tableRow.appendChild(tdElem);
+
+    for (let i = 0; i < City.length; i++) {
+      tdElem.textContent = this.cookiesPerHour[i];
     }
 
     tableRow.appendChild(thElem);
