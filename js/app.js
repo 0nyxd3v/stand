@@ -109,6 +109,17 @@ function headerRender() {
 
 }
 
+function cityTbl() {
+
+  let tableSection = document.getElementById('table-sect');
+
+  let tBody = document.createElement('tbody');
+  tableSection.appendChild(tBody);
+
+  let tableRow = document.createElement('tr');
+  tBody.appendChild(tableRow);
+}
+
 
 // Creating objects using constructor
 new City('Seattle', 23, 65, 6.3);
@@ -130,3 +141,4 @@ function renderMethods() {
 // invoke the renderMethods()
 renderMethods();
 headerRender();
+cityTbl();
