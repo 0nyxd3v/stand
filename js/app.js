@@ -150,23 +150,27 @@ function footerRender() {
   tdElem4.textContent = 'Total:';
   tableRow2.appendChild(tdElem4);
 
+  let grandTotal = 0;
+
   for (let i = 0; i < hours.length; i++) {
     let totalPerHour = 0;
-    let grandTotal = 0;
     console.log(totalPerHour);
 
     for (let j = 0; j < cityArr.length; j++) {
       totalPerHour += cityArr[j].cookiesPerHour[i];
-      grandTotal += totalPerHour;
     }
+    // grandTotal += totalPerHour;
+
     let tdElem5 = document.createElement('td');
     tdElem5.textContent = totalPerHour;
+    // tdElem5.textContent = grandTotal;
     tableRow2.appendChild(tdElem5);
 
-    let tdElem6 = document.createElement('td');
-    tdElem6.textContent = grandTotal;
-    tableRow2.appendChild(tdElem6);
   }
+
+  let tdElem6 = document.createElement('td');
+  tdElem6.textContent = grandTotal;
+  tableRow2.appendChild(tdElem6);
   tFoot.appendChild(tableRow2);
   tbl.appendChild(tFoot);
 }
