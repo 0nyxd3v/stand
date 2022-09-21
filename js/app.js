@@ -116,41 +116,49 @@ function headerRender() {
 
 }
 
-// function dataTbl() {
+function dataTbl() {
 
-//   // let tableSection = document.getElementById('table-sect');
-//   // let tableSection = document.getElementById('table-sect');
-//   let tbl = document.getElementById('sales-table');
-//   tableSection.appendChild(tbl);
+  // let tableSection = document.getElementById('table-sect');
+  let tbl = document.getElementById('sales-table');
+  // tableSection.appendChild(tbl);
 
-//   let tBody = document.createElement('tbody');
-//   // tableSection.appendChild(tBody);
-//   tbl.appendChild(tBody);
+  let tBody = document.createElement('tbody');
+  // tableSection.appendChild(tBody);
+  tbl.appendChild(tBody);
 
-//   let tableRow2 = document.createElement('tr');
-//   tBody.appendChild(tableRow2);
-
+  let tableRow2 = document.createElement('tr');
+  tBody.appendChild(tableRow2);
 
 
-//   for (let i = 0; i < cityArr.length; i++) {
 
-//     let tdElem = document.createElement('td');
-//     tdElem.textContent = cityArr[i].location;
-//     tableRow2.appendChild(tdElem);
-//     locationTotals[i] = 0;
+  for (let i = 0; i < cityArr.length; i++) {
+
+    let sum = 0;
+
+    let tdElem = document.createElement('td');
+    tdElem.textContent = cityArr[i].location;
+    tableRow2.appendChild(tdElem);
+    // locationTotals[i] = 0;
 
 
-//     for (let j = 0; j < cityArr.cookiesPerHour.length; j++) {
+    for (let j = 0; j < cityArr.cookiesPerHour.length; j++) {
 
-//       let tdElem2 = document.createElement('td');
+      let tdElem2 = document.createElement('td');
 
-//       tdElem2.textContent = cityArr[i].cookiesPerHour[j];
-//       tableRow2.appendChild(tdElem2);
-//       locationTotals[i] = 0;
-//     }
-//   }
+      tdElem2.textContent = cityArr[i].cookiesPerHour[j];
+      tableRow2.appendChild(tdElem2);
+      locationTotals[i] = 0;
 
-// }
+      sum += cityArr[i].cookiesPerHour[j];
+    }
+    let tdElem3 = document.createElement('td');
+    tdElem3.textContent = sum;
+    tableRow2.appendChild(tdElem3);
+  }
+
+
+
+}
 
 
 // Creating objects using constructor
