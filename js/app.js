@@ -116,24 +116,6 @@ City.prototype.render = function() {
 
     tableRow.appendChild(thElem);
 
-
-    // create th element
-    if (i === 0) {
-      thElem.textContent = ' ';
-    } else if (i === 16) {
-      thElem.textContent = 'Daily Location Total';
-    } else {
-      thElem.textContent = hours[i];
-
-      tdElem.textContent = this.cookiesPerHour[i];
-    }
-
-
-
-
-    tableRow.appendChild(thElem);
-    tableRow.appendChild(tdElem);
-
   }
 
 
