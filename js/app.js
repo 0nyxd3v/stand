@@ -105,8 +105,9 @@ City.prototype.render = function() {
     trElem1.appendChild(tdElem2);
   }
 
-  // let tdElem3 = document.createElement('td');
-  // tdElem3 = 
+  let tdElem3 = document.createElement('td');
+  tdElem3.textContent = 'Totals:';
+  trElem1.appendChild(tdElem3);
 
 
 };
