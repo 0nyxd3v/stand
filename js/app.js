@@ -99,6 +99,15 @@ City.prototype.render = function() {
   tdElem1.textContent = this.location;
   trElem1.appendChild(tdElem1);
 
+  for (let i = 0; i < hours.length; i++) {
+    let tdElem2 = document.createElement('td');
+    tdElem2.textContent = this.cookiesPerHour[i];
+    trElem1.appendChild(tdElem2);
+  }
+
+  // let tdElem3 = document.createElement('td');
+  // tdElem3 = 
+
 
 };
 
