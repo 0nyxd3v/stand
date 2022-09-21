@@ -6,6 +6,7 @@ let locationTotals = [];
 // --- main parent ---
 let salesSection = document.getElementById('sales-sect');
 
+
 // --- Helper Functions ---
 
 // function that generates random number of customers
@@ -82,29 +83,36 @@ City.prototype.render = function() {
 };
 
 
+// ------ worked with TA Brandon on headerRender() ------
+// modified some part to see if it works
 function headerRender() {
 
   let tableSection = document.getElementById('table-sect');
+  let tbl = document.getElementById('sales-table'); // added
+  tableSection.appendChild(tbl); // added
+
 
   let tHead = document.createElement('thead');
-  tableSection.appendChild(tHead);
+  // tableSection.appendChild(tHead); // orig
+  tbl.appendChild(tHead); // added
 
   let tableRow = document.createElement('tr');
   tHead.appendChild(tableRow);
 
-  let thElem = document.createElement('th');
-  thElem.textContent = ' ';
-  tableRow.appendChild(thElem);
+  let thElem1 = document.createElement('th');
+  thElem1.textContent = ' ';
+  tableRow.appendChild(thElem1);
 
   for (let i = 0; i < hours.length; i++) {
 
-    let thElem = document.createElement('th');
-    thElem.textContent = hours[i];
-    tableRow.appendChild(thElem);
+    let thElem2 = document.createElement('th');
+    thElem2.textContent = hours[i];
+    tableRow.appendChild(thElem2);
     locationTotals[i] = 0;
   }
-  thElem.textContent = 'Daily Total';
-  tableRow.appendChild(thElem);
+  let thElem3 = document.createElement('th');
+  thElem3.textContent = 'Daily Total';
+  tableRow.appendChild(thElem3);
 
 }
 
@@ -112,29 +120,43 @@ function dataTbl() {
 
   // let tableSection = document.getElementById('table-sect');
   let tbl = document.getElementById('sales-table');
+  // tableSection.appendChild(tbl);
 
   let tBody = document.createElement('tbody');
   // tableSection.appendChild(tBody);
   tbl.appendChild(tBody);
 
-  let tableRow = document.createElement('tr');
-  tBody.appendChild(tableRow);
+  let tableRow2 = document.createElement('tr');
+  tBody.appendChild(tableRow2);
 
-  let tdElem = document.createElement('td');
 
 
   for (let i = 0; i < cityArr.length; i++) {
+
+    let sum = 0;
+
+    let tdElem = document.createElement('td');
     tdElem.textContent = cityArr[i].location;
-    tableRow.appendChild(tdElem);
+    tableRow2.appendChild(tdElem);
     // locationTotals[i] = 0;
 
 
     for (let j = 0; j < cityArr.cookiesPerHour.length; j++) {
-      tdElem.textContent = cityArr[i].cookiesPerHour[j];
-      tableRow.appendChild(tdElem);
+
+      let tdElem2 = document.createElement('td');
+
+      tdElem2.textContent = cityArr[i].cookiesPerHour[j];
+      tableRow2.appendChild(tdElem2);
       locationTotals[i] = 0;
+
+      sum += cityArr[i].cookiesPerHour[j];
     }
+    let tdElem3 = document.createElement('td');
+    tdElem3.textContent = sum;
+    tableRow2.appendChild(tdElem3);
   }
+
+
 
 }
 
@@ -160,4 +182,4 @@ function renderMethods() {
 renderMethods();
 headerRender();
 dataTbl();
-console.log(City.cookiesPerHour.length);
+console.log(City[0].cookiesPerHour.length);
