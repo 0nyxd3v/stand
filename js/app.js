@@ -92,9 +92,6 @@ function headerRender() {
   let tableRow = document.createElement('tr');
   tHead.appendChild(tableRow);
 
-  // let tBody = document.createElement('tbody');
-  // salesTable.appendChild(tBody);
-
   let thElem = document.createElement('th');
   thElem.textContent = ' ';
   tableRow.appendChild(thElem);
@@ -118,6 +115,16 @@ function cityTbl() {
 
   let tableRow = document.createElement('tr');
   tBody.appendChild(tableRow);
+
+  let tdElem = document.createElement('td');
+  tdElem.textContent = ' ';
+  tableRow.appendChild(tdElem);
+
+  for (let i = 0; i < City.cookiesPerHour.length; i++) {
+
+    tdElem.textContent = City.cookiesPerHour[i];
+    tableRow.appendChild(tdElem);
+  }
 }
 
 
