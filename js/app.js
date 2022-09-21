@@ -124,6 +124,8 @@ function cityTbl() {
 
     tdElem.textContent = City.cookiesPerHour[i];
     tableRow.appendChild(tdElem);
+    locationTotals[i] = 0;
+
   }
 }
 
@@ -149,3 +151,4 @@ function renderMethods() {
 renderMethods();
 headerRender();
 cityTbl();
+console.log(City.cookiesPerHour);
