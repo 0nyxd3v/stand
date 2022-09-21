@@ -98,9 +98,9 @@ function headerRender() {
 
   for (let i = 0; i < hours.length; i++) {
 
-    let tdElem = document.createElement('th');
-    tdElem.textContent = hours[i];
-    tableRow.appendChild(tdElem);
+    let thElem = document.createElement('th');
+    thElem.textContent = hours[i];
+    tableRow.appendChild(thElem);
     locationTotals[i] = 0;
   }
 
@@ -120,14 +120,37 @@ function totalTbl() {
   tdElem.textContent = 'Daily Total';
   tableRow.appendChild(tdElem);
 
+  for (let i = 0; i < cityArr.length; i++) {
+    let total = 0;
+    for (let j = 0; j < City.cookiesPerHour.length; j++) {
+      total += cityArr[i].cookiesPerHour[j];
+    }
+    tdElem.textContent = total;
+    tableRow.appendChild(tdElem);
+    locationTotals[i] = 0;
+  }
+}
+
+function dataTbl() {
+
+  let tableSection = document.getElementById('table-sect');
+
+  let tBody = document.createElement('tbody');
+  tableSection.appendChild(tBody);
+
+  let tableRow = document.createElement('tr');
+  tBody.appendChild(tableRow);
+
+  let tdElem = document.createElement('td');
+
+
   for (let i = 0; i < hours.length; i++) {
 
-    for (let j = 0; j < City.cookiesPerHour.length; j++) {
-      tdElem.textContent = City[i].cookiesPerHour[j];
-      tableRow.appendChild(tdElem);
-      locationTotals[i] = 0;
-    }
+    tdElem.textContent = cityArr.cookiesPerHour;
+    tableRow.appendChild(tdElem);
+    locationTotals[i] = 0;
   }
+
 }
 
 
