@@ -81,13 +81,17 @@ City.prototype.render = function() {
 
 };
 
-
+// worked with TA Brandon on headerRender()
 function headerRender() {
 
   let tableSection = document.getElementById('table-sect');
+  let tbl = document.getElementById('sales-table'); // added
+  tableSection.appendChild(tbl); // added
+
 
   let tHead = document.createElement('thead');
-  tableSection.appendChild(tHead);
+  // tableSection.appendChild(tHead); // orig
+  tbl.appendChild(tHead); // added
 
   let tableRow = document.createElement('tr');
   tHead.appendChild(tableRow);
