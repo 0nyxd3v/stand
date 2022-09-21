@@ -103,15 +103,19 @@ function headerRender() {
     tableRow.appendChild(thElem);
     locationTotals[i] = 0;
   }
+  thElem.textContent = 'Daily Total';
+  tableRow.appendChild(thElem);
 
 }
 
 function dataTbl() {
 
-  let tableSection = document.getElementById('table-sect');
+  // let tableSection = document.getElementById('table-sect');
+  let tbl = document.getElementById('sales-table');
 
   let tBody = document.createElement('tbody');
-  tableSection.appendChild(tBody);
+  // tableSection.appendChild(tBody);
+  tbl.appendChild(tBody);
 
   let tableRow = document.createElement('tr');
   tBody.appendChild(tableRow);
@@ -122,9 +126,11 @@ function dataTbl() {
   for (let i = 0; i < cityArr.length; i++) {
     tdElem.textContent = cityArr[i].location;
     tableRow.appendChild(tdElem);
+    // locationTotals[i] = 0;
 
-    for (let j = 0; j < hours.length; j++) {
-      tdElem.textContent = cityArr.cookiesPerHour;
+
+    for (let j = 0; j < cityArr.cookiesPerHour.length; j++) {
+      tdElem.textContent = cityArr[i].cookiesPerHour[j];
       tableRow.appendChild(tdElem);
       locationTotals[i] = 0;
     }
