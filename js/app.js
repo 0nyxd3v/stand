@@ -106,6 +106,17 @@ City.prototype.render = function() {
     let thElem = document.createElement('th');
     let tdElem = document.createElement('td');
 
+    if (i === 0) {
+      thElem.textContent = ' ';
+    } else if (i === 16) {
+      thElem.textContent = 'Daily Location Total';
+    } else {
+      thElem.textContent = hours[i];
+    }
+
+    tableRow.appendChild(thElem);
+
+
     // create th element
     if (i === 0) {
       thElem.textContent = ' ';
