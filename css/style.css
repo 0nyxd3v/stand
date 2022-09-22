@@ -16,10 +16,6 @@ section {
   padding: 20px;
 }
 
-section:hover {
-  box-shadow: 0 0 50px black;
-}
-
 
 div {
   color: white;
@@ -33,25 +29,14 @@ div {
   border-radius: 20px;
 }
 
-div:hover {
-  transform: scale(1.01,1.01);
-  box-shadow: 0 0 50px black;
-}
 
-div:active {
-  transform: scale(0.8,0.8);
-}
-
-ul {
-  margin-top: 20px;
-  list-style-type: disc;
-}
-
-table, th, td {
+td {
   padding: 10px;
   border: 1px solid black;
+  width: 30px
 }
 
-thead {
-  border: 0;
+th {
+  padding: 6px;
+  font-weight: bold;
 }
