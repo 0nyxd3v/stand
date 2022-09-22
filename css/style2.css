@@ -1,8 +1,17 @@
 body {
-  background-color: #bab7b7;
+  background-color: #b7b9ba;
   width: 100%;
   font-family: raleway;
   margin: auto;
+}
+
+main {
+  background-color: #737a85;
+  width: 950px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* margin-bottom: 40px; */
 }
 
 header {
@@ -11,13 +20,6 @@ header {
   width: 100%;
   margin-bottom: 40px;
   padding-top: 20px;
-}
-
-#logo {
-  margin-left:15px;
-  display:flex;
-  flex-direction:row;
-  align-items:center;
 }
 
 nav {
@@ -30,30 +32,14 @@ header img {
   margin-top: 15 px;
 }
 
-.img-div {
-  background-color: #003049;
-  display:flex;
-  flex-direction:column;
-  margin:15px;
-  background-color: #003049;
-  padding: 10px;
-  color: white;
-  align-items: center;
-  border-radius: 15px;
-}
-
-.cookie-salmon-img {
-  border-radius: 15px;
-}
-
-header ul {
+/* header ul {
   display: flex;
   justify-content: space-around;
 }
 
 header ul li {
   margin-top: 40px;
-}
+} */
 
 a {
   color: aliceblue;
@@ -112,3 +98,35 @@ footer {
   padding: 50px;
   margin-top: 20 px;
 }
+
+img {
+  border-radius: 15px;
+}
+
+#card-container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:70vh;
+}
+
+.animal-card{
+  display:flex;
+  flex-direction:column;
+  margin:15px;
+  background-color: #003049;
+  padding: 10px;
+  color: white;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.animal-image{
+  border-radius: 15px;
+  height: 200px;
+  width: 200px;
+    
+}
+
+
+
