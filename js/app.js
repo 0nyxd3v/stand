@@ -116,8 +116,7 @@ City.prototype.render = function() {
 function headerRender() {
 
   let tHead = document.createElement('thead');
-  // tableSection.appendChild(tHead); // orig
-  tbl.appendChild(tHead); // added
+  tbl.appendChild(tHead); 
 
   let tableRow = document.createElement('tr');
   tHead.appendChild(tableRow);
@@ -139,6 +138,9 @@ function headerRender() {
 
 }
 
+// creating a footer function to add daily cookie total
+// >> worked w/ TA Tammy, changed tBody variable to tFoot, she caught the
+// missing j++ (causing my function to not work)
 function footerRender() {
 
   let tFoot = document.createElement('tfoot');
@@ -159,11 +161,10 @@ function footerRender() {
     for (let j = 0; j < cityArr.length; j++) {
       totalPerHour += cityArr[j].cookiesPerHour[i];
     }
-    // grandTotal += totalPerHour;
+    grandTotal += totalPerHour;
 
     let tdElem5 = document.createElement('td');
     tdElem5.textContent = totalPerHour;
-    // tdElem5.textContent = grandTotal;
     tableRow2.appendChild(tdElem5);
 
   }
