@@ -40,6 +40,10 @@ h2 {
   padding-bottom: 10px;
 }
 
+#city-name {
+  font-weight: bold;
+}
+
 a{
   margin-right:15px;
   color:white;
