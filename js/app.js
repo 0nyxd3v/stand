@@ -67,7 +67,7 @@ City.prototype.render = function() {
   h2Elem.textContent = this.location; // adding location name to h2
   divElem.appendChild(h2Elem);
 
-
+  // >>> for Lab 06 <<<
   // create ul
   let ulElem = document.createElement('ul');
   divElem.appendChild(ulElem);
@@ -77,9 +77,7 @@ City.prototype.render = function() {
     let liElem = document.createElement('li');
     liElem.textContent = hours[i] + ': ' + this.cookiesPerHour[i] + ' cookies';
     sum += this.cookiesPerHour[i];
-    // if (i === hours.length - 1) {     // -> won't work
-    //   liElem.textContent = `Total: ${sum} cookies`;
-    // }
+
     ulElem.appendChild(liElem);
   }
   // this works, prints total
@@ -87,7 +85,7 @@ City.prototype.render = function() {
   liTotal.textContent = `Total: ${sum} cookies`;
   ulElem.appendChild(liTotal);
 
-
+  // >>> Lab 07 <<<
   // --- create TABLE ----
   let tBody = document.createElement('tbody');
   tbl.appendChild(tBody);
@@ -116,7 +114,7 @@ City.prototype.render = function() {
 function headerRender() {
 
   let tHead = document.createElement('thead');
-  tbl.appendChild(tHead); 
+  tbl.appendChild(tHead);
 
   let tableRow = document.createElement('tr');
   tHead.appendChild(tableRow);
@@ -198,4 +196,3 @@ function renderMethods() {
 renderMethods();
 headerRender();
 footerRender();
-// console.log(footerRender);
