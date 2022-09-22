@@ -7,10 +7,10 @@ body {
 
 main {
   background-color: #737a85;
-  width: 950px;
-  display: flex;
+  width: 100vw;
+  /* display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: column; */
   /* margin-bottom: 40px; */
 }
 
@@ -107,7 +107,14 @@ img {
   display:flex;
   justify-content:center;
   align-items:center;
-  height:70vh;
+  height: 30vh;
+}
+
+#family-container {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding: 40px;
 }
 
 .animal-card{
@@ -126,6 +133,10 @@ img {
   height: 200px;
   width: 200px;
     
+}
+
+.family-image {
+
 }
 
 
