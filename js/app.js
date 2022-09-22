@@ -169,3 +169,10 @@ function renderMethods() {
 renderMethods();
 headerRender();
 footerRender();
+
+
+// >>> Create Form <<<
+// function to be called on Submit action
+// function handleSubmit(event) {
+//   event.preventDefault();
+// }
