@@ -1,10 +1,8 @@
+
 // --- Global Variables ---
 const hours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
 let cityArr = [];
 let locationTotals = [];
-
-// --- main parent ---
-let salesSection = document.getElementById('sales-sect');
 
 // ---- table's parent ---
 let tableSection = document.getElementById('table-sect');
@@ -57,37 +55,8 @@ City.prototype.getNumOfCookies = function() {
 
 // >>> render method <<<
 City.prototype.render = function() {
-  // create div
-  let divElem = document.createElement('div');
-  salesSection.appendChild(divElem); // adding divElem to our parent section
 
-
-  // create h2
-  let h2Elem = document.createElement('h2');
-  h2Elem.textContent = this.location; // adding location name to h2
-  divElem.appendChild(h2Elem);
-
-
-  // create ul
-  let ulElem = document.createElement('ul');
-  divElem.appendChild(ulElem);
-
-  let sum = 0;
-  for (let i = 0; i < hours.length; i++) {
-    let liElem = document.createElement('li');
-    liElem.textContent = hours[i] + ': ' + this.cookiesPerHour[i] + ' cookies';
-    sum += this.cookiesPerHour[i];
-    // if (i === hours.length - 1) {     // -> won't work
-    //   liElem.textContent = `Total: ${sum} cookies`;
-    // }
-    ulElem.appendChild(liElem);
-  }
-  // this works, prints total
-  let liTotal = document.createElement('li');
-  liTotal.textContent = `Total: ${sum} cookies`;
-  ulElem.appendChild(liTotal);
-
-
+  // >>> Lab 07 <<<
   // --- create TABLE ----
   let tBody = document.createElement('tbody');
   tbl.appendChild(tBody);
@@ -99,7 +68,9 @@ City.prototype.render = function() {
   tdElem1.textContent = this.location;
   trElem1.appendChild(tdElem1);
 
+  let sum = 0;
   for (let i = 0; i < hours.length; i++) {
+    sum += this.cookiesPerHour[i];
     let tdElem2 = document.createElement('td');
     tdElem2.textContent = this.cookiesPerHour[i];
     trElem1.appendChild(tdElem2);
@@ -108,8 +79,6 @@ City.prototype.render = function() {
   let tdElem2 = document.createElement('td');
   tdElem2.textContent = sum;
   trElem1.appendChild(tdElem2);
-
-
 };
 
 
@@ -117,12 +86,8 @@ City.prototype.render = function() {
 // modified some part to see if it works
 function headerRender() {
 
-  // let tbl = document.getElementById('sales-table'); // moved to global
-  // tableSection.appendChild(tbl); // moved to global
-
   let tHead = document.createElement('thead');
-  // tableSection.appendChild(tHead); // orig
-  tbl.appendChild(tHead); // added
+  tbl.appendChild(tHead);
 
   let tableRow = document.createElement('tr');
   tHead.appendChild(tableRow);
@@ -139,34 +104,47 @@ function headerRender() {
     locationTotals[i] = 0;
   }
   let thElem3 = document.createElement('th');
-  thElem3.textContent = 'Daily Total';
+  thElem3.textContent = 'Daily Location Total';
   tableRow.appendChild(thElem3);
 
 }
 
+// creating a footer function to add daily cookie total
+// >> worked w/ TA Tammy, changed tBody variable to tFoot, she caught the
+// missing j++ (causing my function to not work)
 function footerRender() {
 
-  // let tableSection = document.getElementById('table-sect');
-  let tbl = document.getElementById('sales-table');
-  // tableSection.appendChild(tbl);
-
-  let tBody = document.createElement('tbody');
-  // tableSection.appendChild(tBody);
-  tbl.appendChild(tBody);
+  let tFoot = document.createElement('tfoot');
 
   let tableRow2 = document.createElement('tr');
-  tBody.appendChild(tableRow2);
+  // tFoot.appendChild(tableRow2);
 
+  let tdElem4 = document.createElement('td');
+  tdElem4.textContent = 'Total:';
+  tableRow2.appendChild(tdElem4);
 
+  let grandTotal = 0;
 
-  for (let i = 0; i < cityArr.length; i++) {
+  for (let i = 0; i < hours.length; i++) {
     let totalPerHour = 0;
-    for (let i = 0; i < cityArr.length; i++) {
-      for (let j = 0; j < cityArr[i].cookiesPerHour.length;) {
-        totalPerHour += cityArr[i].cookiesPerHour[j]
-      }
+    console.log(totalPerHour);
+
+    for (let j = 0; j < cityArr.length; j++) {
+      totalPerHour += cityArr[j].cookiesPerHour[i];
     }
+    grandTotal += totalPerHour;
+
+    let tdElem5 = document.createElement('td');
+    tdElem5.textContent = totalPerHour;
+    tableRow2.appendChild(tdElem5);
+
   }
+
+  let tdElem6 = document.createElement('td');
+  tdElem6.textContent = grandTotal;
+  tableRow2.appendChild(tdElem6);
+  tFoot.appendChild(tableRow2);
+  tbl.appendChild(tFoot);
 }
 
 
@@ -191,4 +169,3 @@ function renderMethods() {
 renderMethods();
 headerRender();
 footerRender();
-console.log(City[0].cookiesPerHour.length);
