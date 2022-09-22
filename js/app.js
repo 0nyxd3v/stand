@@ -103,7 +103,7 @@ function headerRender() {
     locationTotals[i] = 0;
   }
   let thElem3 = document.createElement('th');
-  thElem3.textContent = 'Daily Total';
+  thElem3.textContent = 'Daily Location Total';
   tableRow.appendChild(thElem3);
 
 }
