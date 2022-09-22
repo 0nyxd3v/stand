@@ -3,9 +3,6 @@ const hours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12
 let cityArr = [];
 let locationTotals = [];
 
-// --- main parent ---
-let salesSection = document.getElementById('sales-sect');
-
 // ---- table's parent ---
 let tableSection = document.getElementById('table-sect');
 let tbl = document.getElementById('sales-table');
@@ -57,33 +54,6 @@ City.prototype.getNumOfCookies = function() {
 
 // >>> render method <<<
 City.prototype.render = function() {
-  // create div
-  let divElem = document.createElement('div');
-  salesSection.appendChild(divElem); // adding divElem to our parent section
-
-
-  // create h2
-  let h2Elem = document.createElement('h2');
-  h2Elem.textContent = this.location; // adding location name to h2
-  divElem.appendChild(h2Elem);
-
-  // >>> for Lab 06 <<<
-  // create ul
-  let ulElem = document.createElement('ul');
-  divElem.appendChild(ulElem);
-
-  let sum = 0;
-  for (let i = 0; i < hours.length; i++) {
-    let liElem = document.createElement('li');
-    liElem.textContent = hours[i] + ': ' + this.cookiesPerHour[i] + ' cookies';
-    sum += this.cookiesPerHour[i];
-
-    ulElem.appendChild(liElem);
-  }
-  // this works, prints total
-  let liTotal = document.createElement('li');
-  liTotal.textContent = `Total: ${sum} cookies`;
-  ulElem.appendChild(liTotal);
 
   // >>> Lab 07 <<<
   // --- create TABLE ----
@@ -97,7 +67,9 @@ City.prototype.render = function() {
   tdElem1.textContent = this.location;
   trElem1.appendChild(tdElem1);
 
+  let sum = 0;
   for (let i = 0; i < hours.length; i++) {
+    sum += this.cookiesPerHour[i];
     let tdElem2 = document.createElement('td');
     tdElem2.textContent = this.cookiesPerHour[i];
     trElem1.appendChild(tdElem2);
