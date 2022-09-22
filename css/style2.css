@@ -31,7 +31,13 @@ header {
 }
 
 h2 {
-  color:white
+  color:white;
+  font-weight: bold;
+}
+
+.h2-info {
+  color: black;
+  padding-bottom: 10px;
 }
 
 a{
@@ -59,13 +65,7 @@ article {
   padding: 50px;
 }
 
-p {
-  overflow: auto;
-}
 
-h2 {
-  font-weight: bold;
-}
 button {
   margin-top: 10px;
   transition: 350ms;
@@ -127,6 +127,11 @@ img {
   padding: 20px;
 }
 
+.location {
+  background-color: white;
+  padding: 10px;
+}
+
 footer {
   height: 50px;
   bottom: 0;
@@ -151,6 +156,6 @@ footer {
   margin-left: 5px;
 }
   
-
-
-
+/* p {
+  overflow: auto;
+}  */
