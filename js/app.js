@@ -166,6 +166,7 @@ function footerRender() {
         totalPerHour += cityArr[i].cookiesPerHour[j]
       }
     }
+  }
 }
 
 
