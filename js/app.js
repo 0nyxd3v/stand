@@ -9,6 +9,9 @@ let tableSection = document.getElementById('table-sect');
 let tbl = document.getElementById('sales-table');
 tableSection.appendChild(tbl);
 
+let tBody = document.createElement('tbody');
+tbl.appendChild(tBody);
+
 // >>> grabbing the form id for Event listener <<<
 let myForm = document.getElementById('my-form');
 
@@ -61,8 +64,8 @@ City.prototype.render = function() {
 
   // >>> Lab 07 <<<
   // --- create TABLE ----
-  let tBody = document.createElement('tbody');
-  tbl.appendChild(tBody);
+  // let tBody = document.createElement('tbody');
+  // tbl.appendChild(tBody);
 
   let trElem1 = document.createElement('tr');
   tBody.appendChild(trElem1);
@@ -192,6 +195,8 @@ function handleSubmit(event) {
   // Render City
   newCity.getNumCust();
   newCity.getNumOfCookies();
+
+  // let row = tBody.insertRow()
 
   // clear the form for next input
   myForm.reset();
