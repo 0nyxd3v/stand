@@ -176,3 +176,8 @@ footerRender();
 // function handleSubmit(event) {
 //   event.preventDefault();
 // }
+
+// this.location = location;
+// this.minCust = minCust;
+// this.maxCust = maxCust;
+// this.avgCookie = avgCookie;
