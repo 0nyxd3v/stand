@@ -213,17 +213,17 @@ function handleSubmit(event) {
   // td2New.textContent = newCity.cookiesPerHour;
 
   for (let i = 0; i < newCity.length; i++) {
-    let td2New = document.createElement('td');
-    td2New.textContent = newCity.cookiesPerHour[i];
+    let tdNew = document.createElement('td');
+    tdNew.textContent = newCity.cookiesPerHour[i];
+    row.appendChild(tdNew);
+    tBody.appendChild(row);
 
-    let row2 = document.createElement('tr');
-    row2.appendChild(td2New);
     // sum += this.cookiesPerHour[i];
     // let tdElem2 = document.createElement('td');
     // tdElem2.textContent = this.cookiesPerHour[i];
     // trElem1.appendChild(tdElem2);
-  }
 
+  }
 
   // clear the form for next input
   myForm.reset();
