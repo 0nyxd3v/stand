@@ -212,10 +212,12 @@ function handleSubmit(event) {
   // let td2New = document.createElement('td');
   // td2New.textContent = newCity.cookiesPerHour;
 
-  for (let i = 0; i < hours.length; i++) {
+  for (let i = 0; i < newCity.length; i++) {
     let td2New = document.createElement('td');
     td2New.textContent = newCity.cookiesPerHour[i];
-    row.appendChild(td2New);
+
+    let row2 = document.createElement('tr');
+    row2.appendChild(td2New);
     // sum += this.cookiesPerHour[i];
     // let tdElem2 = document.createElement('td');
     // tdElem2.textContent = this.cookiesPerHour[i];
