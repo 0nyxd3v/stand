@@ -173,7 +173,7 @@ function renderMethods() {
 // invoke the renderMethods()
 renderMethods();
 headerRender();
-footerRender();
+// footerRender();
 
 
 // >>> Create Form <<<
@@ -196,6 +196,7 @@ function handleSubmit(event) {
   newCity.getNumCust();
   newCity.getNumOfCookies();
   newCity.render();
+  footerRender();
 
 
   console.log('newCity', newCity);
@@ -208,7 +209,3 @@ function handleSubmit(event) {
 //  >>> Attaching the Event Listener <<<
 myForm.addEventListener('submit', handleSubmit);
 
-// this.location = location;
-// this.minCust = minCust;
-// this.maxCust = maxCust;
-// this.avgCookie = avgCookie;
