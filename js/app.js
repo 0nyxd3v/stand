@@ -123,9 +123,7 @@ function headerRender() {
 function footerRender() {
 
   let tFoot = document.createElement('tfoot');
-
   let tableRow2 = document.createElement('tr');
-  // tFoot.appendChild(tableRow2);
 
   let tdElem4 = document.createElement('td');
   tdElem4.textContent = 'Total:';
@@ -135,7 +133,6 @@ function footerRender() {
 
   for (let i = 0; i < hours.length; i++) {
     let totalPerHour = 0;
-    console.log(totalPerHour);
 
     for (let j = 0; j < cityArr.length; j++) {
       totalPerHour += cityArr[j].cookiesPerHour[i];
@@ -198,39 +195,12 @@ function handleSubmit(event) {
   // Render City
   newCity.getNumCust();
   newCity.getNumOfCookies();
+  newCity.render();
+
 
   console.log('newCity', newCity);
   console.log('cityArr', cityArr);
 
-
-  // create table elements
-  let row = document.createElement('tr');
-  // tBody.appendChild(row);
-
-  let tdNew = document.createElement('td');
-  tdNew.textContent = newCity.location;
-  row.appendChild(tdNew);
-
-  // let td2New = document.createElement('td');
-  // td2New.textContent = newCity.cookiesPerHour;
-
-  for (let i = 0; i < newCity.length; i++) {
-    // let row2 = document.createElement('tr');
-    let tdNew2 = document.createElement('td');
-    tdNew2.textContent = newCity.cookiesPerHour[i];
-    row.appendChild(tdNew2);
-    tBody.appendChild(row);
-
-
-    // sum += this.cookiesPerHour[i];
-    // let tdElem2 = document.createElement('td');
-    // tdElem2.textContent = this.cookiesPerHour[i];
-    // trElem1.appendChild(tdElem2);
-
-  }
-  tBody.appendChild(row);
-
-  // clear the form for next input
   myForm.reset();
 }
 
