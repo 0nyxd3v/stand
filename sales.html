@@ -8,10 +8,39 @@
   <header>
     <h2><a href="https://nerissa29.github.io/cookie-stand/index.html"> Home </a></h2>
   </header>
-  <section id="sales-sect"></section>
-  <section id="table-sect">
-    <table id="sales-table"></table>
-  </section>
+  <main>
+    <section id="form-section">
+      <form id="my-form">
+        <fieldset>
+          <legend> Fieldset Context </legend>
+          
+          <div>
+          <!-- for location -->
+          <label for="loc"> Location: </label>
+          <input id="loc" type="text" name="loc">
+
+          <!-- for minCust -->
+          <label for="min"> Min # of Customer: </label>
+          <input id="min" type="text" name="min"></div>
+
+          <!-- for maxCust -->
+          <div><label for="max"> Max # of Customer: </label>
+          <input id="max" type="text" name="max">
+
+          <!-- for avgCookie -->
+          <label for="avg"> Average Cookie: </label>
+          <input id="avg"avg type="text" name="avg"></div>
+
+        </fieldset>
+        <button id="submit-btn" type="submit"> Submit</button>
+      </form>
+    </section>
+    
+    <section id="sales-sect"></section>
+    <section id="table-sect">
+      <table id="sales-table"></table>
+    </section>
+  </main>
   <script src = "js/app.js"></script>
 </body>
 </html>

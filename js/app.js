@@ -9,6 +9,12 @@ let tableSection = document.getElementById('table-sect');
 let tbl = document.getElementById('sales-table');
 tableSection.appendChild(tbl);
 
+let tBody = document.createElement('tbody');
+tbl.appendChild(tBody);
+
+// >>> grabbing the form id for Event listener <<<
+let myForm = document.getElementById('my-form');
+
 
 
 
@@ -58,8 +64,8 @@ City.prototype.render = function() {
 
   // >>> Lab 07 <<<
   // --- create TABLE ----
-  let tBody = document.createElement('tbody');
-  tbl.appendChild(tBody);
+  // let tBody = document.createElement('tbody');
+  // tbl.appendChild(tBody);
 
   let trElem1 = document.createElement('tr');
   tBody.appendChild(trElem1);
@@ -169,3 +175,46 @@ function renderMethods() {
 renderMethods();
 headerRender();
 footerRender();
+
+
+// >>> Create Form <<<
+
+// --- function to be called on Submit action ---
+function handleSubmit(event) {
+  event.preventDefault();
+
+  // gathering info from form
+  let location = event.target.loc.value;
+  console.log(location);
+  let minCust = +event.target.min.value;
+  let maxCust = +event.target.max.value;
+  let avgCookie = +event.target.avg.value;
+
+  // create new City Object via Constructors
+  let newCity = new City(location, minCust, maxCust, avgCookie);
+
+  // Render City
+  newCity.getNumCust();
+  newCity.getNumOfCookies();
+
+  // create table elements
+  let row = document.createElement('trow');
+  tBody.appendChild(row);
+
+  let tdNew = document.createElement('td');
+  // tdNew.textContent = 
+  row.appendChild(tdNew);
+
+
+  // clear the form for next input
+  myForm.reset();
+}
+
+
+//  >>> Attaching the Event Listener <<<
+myForm.addEventListener('submit', handleSubmit);
+
+// this.location = location;
+// this.minCust = minCust;
+// this.maxCust = maxCust;
+// this.avgCookie = avgCookie;
