@@ -9,31 +9,32 @@
     <h2><a href="https://nerissa29.github.io/cookie-stand/index.html"> Home </a></h2>
   </header>
   <main>
+    <section id="form-section">
+      <form id="my-form">
+        <fieldset>
+          <legend> Fieldset Context </legend>
+        
+          <!-- for location -->
+          <label for="loc"> Location: </label>
+          <input id="loc" type="text" name="loc">
 
-    <form id="my-form">
-      <fieldset>
-        <legend> Fieldset Context </legend>
-      
-        <!-- for location -->
-        <label for="loc"> Location: </label>
-        <input id="loc" type="text" name="loc">
+          <!-- for minCust -->
+          <label for="min"> Min # of Customer: </label>
+          <input id="min" type="text" name="min">
 
-        <!-- for minCust -->
-        <label for="min"> Min # of Customer: </label>
-        <input id="min" type="text" name="min">
+          <!-- for maxCust -->
+          <label for="max"> Max # of Customer: </label>
+          <input id="max" type="text" name="max">
 
-        <!-- for maxCust -->
-        <label for="max"> Max # of Customer: </label>
-        <input id="max" type="text" name="max">
+          <!-- for avgCookie -->
+          <label for="avg"> Average Cookie: </label>
+          <input id="avg"avg type="text" name="avg">
 
-        <!-- for avgCookie -->
-        <label for="avg"> Average Cookie: </label>
-        <input id="avg"avg type="text" name="avg">
-
-      </fieldset>
-      <button type="submit"> Submit</button>
-    </form>
-
+        </fieldset>
+        <button type="submit"> Submit</button>
+      </form>
+    </section>
+    
     <section id="sales-sect"></section>
     <section id="table-sect">
       <table id="sales-table"></table>

@@ -16,16 +16,21 @@ section {
   padding: 20px;
 }
 
-div {
+fieldset {
   color: white;
   display: flex;
   align-items: center;
   flex-direction: column;
   background-color: #7a5362;
   margin: 10px;
-  padding: 20px;
+  padding: 40px;
   padding-left: 30px;
   border-radius: 20px;
+  height: 150px;
+}
+
+form {
+  background-color: rgb(62, 85, 105);
 }
 
 td {
