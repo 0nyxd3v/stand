@@ -64,6 +64,8 @@ City.prototype.render = function() {
 
   // >>> Lab 07 <<<
   // --- create TABLE ----
+
+
   // let tBody = document.createElement('tbody');
   // tbl.appendChild(tBody);
 
@@ -202,8 +204,8 @@ function handleSubmit(event) {
 
 
   // create table elements
-  let row = document.createElement('trow');
-  tBody.appendChild(row);
+  let row = document.createElement('tr');
+  // tBody.appendChild(row);
 
   let tdNew = document.createElement('td');
   tdNew.textContent = newCity.location;
@@ -213,10 +215,12 @@ function handleSubmit(event) {
   // td2New.textContent = newCity.cookiesPerHour;
 
   for (let i = 0; i < newCity.length; i++) {
-    let tdNew = document.createElement('td');
-    tdNew.textContent = newCity.cookiesPerHour[i];
-    row.appendChild(tdNew);
+    // let row2 = document.createElement('tr');
+    let tdNew2 = document.createElement('td');
+    tdNew2.textContent = newCity.cookiesPerHour[i];
+    row.appendChild(tdNew2);
     tBody.appendChild(row);
+
 
     // sum += this.cookiesPerHour[i];
     // let tdElem2 = document.createElement('td');
@@ -224,6 +228,7 @@ function handleSubmit(event) {
     // trElem1.appendChild(tdElem2);
 
   }
+  tBody.appendChild(row);
 
   // clear the form for next input
   myForm.reset();
