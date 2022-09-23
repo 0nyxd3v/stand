@@ -185,6 +185,7 @@ function handleSubmit(event) {
 
   // gathering info from form
   let location = event.target.loc.value;
+  console.log(location);
   let minCust = +event.target.min.value;
   let maxCust = +event.target.max.value;
   let avgCookie = +event.target.avg.value;
@@ -196,7 +197,14 @@ function handleSubmit(event) {
   newCity.getNumCust();
   newCity.getNumOfCookies();
 
-  // let row = tBody.insertRow()
+  // create table elements
+  let row = document.createElement('trow');
+  tBody.appendChild(row);
+
+  let tdNew = document.createElement('td');
+  // tdNew.textContent = 
+  row.appendChild(tdNew);
+
 
   // clear the form for next input
   myForm.reset();
