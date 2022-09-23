@@ -200,6 +200,7 @@ function handleSubmit(event) {
   newCity.getNumCust();
   newCity.getNumOfCookies();
   newCity.render();
+  tbl.deleteTFoot();
   footerRender();
 
 
