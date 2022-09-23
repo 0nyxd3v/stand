@@ -9,6 +9,9 @@ let tableSection = document.getElementById('table-sect');
 let tbl = document.getElementById('sales-table');
 tableSection.appendChild(tbl);
 
+// >>> grabbing the form id for Event listener <<<
+let myForm = document.getElementById('my-form');
+
 
 
 
@@ -172,10 +175,31 @@ footerRender();
 
 
 // >>> Create Form <<<
-// function to be called on Submit action
-// function handleSubmit(event) {
-//   event.preventDefault();
-// }
+
+// --- function to be called on Submit action ---
+function handleSubmit(event) {
+  event.preventDefault();
+
+  // gathering info from form
+  let location = event.target.loc.value;
+  let minCust = +event.target.min.value;
+  let maxCust = +event.target.max.value;
+  let avgCookie = +event.target.avg.value;
+
+  // create new City Object via Constructors
+  let newCity = new City(location, minCust, maxCust, avgCookie);
+
+  // Render City
+  newCity.getNumCust();
+  newCity.getNumOfCookies();
+
+  // clear the form for next input
+  myForm.reset();
+}
+
+
+//  >>> Attaching the Event Listener <<<
+myForm.addEventListener('submit', handleSubmit);
 
 // this.location = location;
 // this.minCust = minCust;
