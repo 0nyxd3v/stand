@@ -197,13 +197,30 @@ function handleSubmit(event) {
   newCity.getNumCust();
   newCity.getNumOfCookies();
 
+  console.log('newCity', newCity);
+  console.log('cityArr', cityArr);
+
+
   // create table elements
   let row = document.createElement('trow');
   tBody.appendChild(row);
 
   let tdNew = document.createElement('td');
-  // tdNew.textContent = 
+  tdNew.textContent = newCity.location;
   row.appendChild(tdNew);
+
+  // let td2New = document.createElement('td');
+  // td2New.textContent = newCity.cookiesPerHour;
+
+  for (let i = 0; i < hours.length; i++) {
+    let td2New = document.createElement('td');
+    td2New.textContent = newCity.cookiesPerHour[i];
+    row.appendChild(td2New);
+    // sum += this.cookiesPerHour[i];
+    // let tdElem2 = document.createElement('td');
+    // tdElem2.textContent = this.cookiesPerHour[i];
+    // trElem1.appendChild(tdElem2);
+  }
 
 
   // clear the form for next input
