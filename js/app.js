@@ -131,10 +131,14 @@ function footerRender() {
 
   let grandTotal = 0;
 
+
   for (let i = 0; i < hours.length; i++) {
     let totalPerHour = 0;
 
     for (let j = 0; j < cityArr.length; j++) {
+      // let footerData = document.querySelectorAll(cityArr[j].cookiesPerHour[i]);
+      // totalPerHour += footerData;
+
       totalPerHour += cityArr[j].cookiesPerHour[i];
     }
     grandTotal += totalPerHour;
@@ -173,7 +177,7 @@ function renderMethods() {
 // invoke the renderMethods()
 renderMethods();
 headerRender();
-// footerRender();
+footerRender();
 
 
 // >>> Create Form <<<
@@ -208,4 +212,3 @@ function handleSubmit(event) {
 
 //  >>> Attaching the Event Listener <<<
 myForm.addEventListener('submit', handleSubmit);
-
