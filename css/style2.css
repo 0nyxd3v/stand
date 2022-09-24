@@ -20,6 +20,8 @@ header {
   align-items:center;
   justify-content:space-between;
   margin-bottom: 30px;
+  padding-left: 120px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -31,14 +33,33 @@ header {
 }
 
 h2 {
-  color:white;
+  color:rgb(235, 214, 214);
+  font-weight: bold;
+  padding: 70px;
+
+}
+
+h3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.h2-info {
+  color: black;
+  padding-bottom: 20px;
+  margin-top: 10px;
   font-weight: bold;
 }
 
-.h2-info {
-  color: black;
-  padding-bottom: 10px;
+h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
+
+#message-text {
+  color:aliceblue;
+  margin-left: 253px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 
 #city-name {
   font-weight: bold;
@@ -50,6 +71,10 @@ a{
   transition: 1s;
   text-decoration: none;
   padding-right: 50px;
+}
+
+a:hover, h2:hover {
+  color: #86afd0;
 }
 
 
@@ -69,7 +94,7 @@ article {
   display: flex;
   justify-content: space-between;
   flex-direction: column; 
-  padding: 50px;
+  padding-bottom: 50px;
 }
 
 
@@ -109,6 +134,8 @@ footer {
   justify-content:center;
   align-items:center;
   padding: 40px;
+  background-color: #003049;
+
 }
 
 .animal-card{
@@ -129,6 +156,10 @@ footer {
     
 }
 
+.animal-container {
+  background-color: #003049;
+}
+
 .shirt-image {
   padding: 20px;
 }
@@ -136,19 +167,20 @@ footer {
 .location {
   background-color: white;
   padding: 10px;
-  height: 230px;
-  margin-bottom: 10px;
+  padding-bottom: 50px;
+  height: 400px;
+  margin-bottom: 20px;
 }
 
 .hours-div {
   background-color: white;
-  padding: 10px;
+  padding: 20px;
   height: 60px;
   /* margin-bottom: 10px; */
 }
 
 footer {
-  height: 50px;
+  height: 15px;
   bottom: 0;
   background-color: #003049;
   color: white;
@@ -156,6 +188,48 @@ footer {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0;
+}
+
+#email-sect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.info-sect {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.info-sect {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+#email-input, #email-btn {
+  margin-left: 10px;
+}
+
+#email-btn {
+  width: 80px;
+  height:30px;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ad719a;
+  margin: 20px;
+}
+
+
+/* #email-sect {
+  display: flex;
+  flex-direction: row;
 }
 
 .email-sign-up {
@@ -185,8 +259,5 @@ footer {
   border-radius: 50%;
   background-color: #ad719a;
   margin: 20px;
-}
+} */
   
-/* p {
-  overflow: auto;
-}  */

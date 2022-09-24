@@ -65,10 +65,6 @@ City.prototype.render = function() {
   // >>> Lab 07 <<<
   // --- create TABLE ----
 
-
-  // let tBody = document.createElement('tbody');
-  // tbl.appendChild(tBody);
-
   let trElem1 = document.createElement('tr');
   tBody.appendChild(trElem1);
 
@@ -136,9 +132,6 @@ function footerRender() {
     let totalPerHour = 0;
 
     for (let j = 0; j < cityArr.length; j++) {
-      // let footerData = document.querySelectorAll(cityArr[j].cookiesPerHour[i]);
-      // totalPerHour += footerData;
-
       totalPerHour += cityArr[j].cookiesPerHour[i];
     }
     grandTotal += totalPerHour;
@@ -148,7 +141,6 @@ function footerRender() {
     tableRow2.appendChild(tdElem5);
 
   }
-
   let tdElem6 = document.createElement('td');
   tdElem6.textContent = grandTotal;
   tableRow2.appendChild(tdElem6);
