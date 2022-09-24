@@ -180,7 +180,7 @@ footer {
 }
 
 footer {
-  height: 50px;
+  height: 15px;
   bottom: 0;
   background-color: #003049;
   color: white;
@@ -188,6 +188,48 @@ footer {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0;
+}
+
+#email-sect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.info-sect {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.info-sect {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+#email-input, #email-btn {
+  margin-left: 10px;
+}
+
+#email-btn {
+  width: 80px;
+  height:30px;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ad719a;
+  margin: 20px;
+}
+
+
+/* #email-sect {
+  display: flex;
+  flex-direction: row;
 }
 
 .email-sign-up {
@@ -217,8 +259,5 @@ footer {
   border-radius: 50%;
   background-color: #ad719a;
   margin: 20px;
-}
+} */
   
-/* p {
-  overflow: auto;
-}  */
