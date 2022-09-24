@@ -40,19 +40,21 @@ h2 {
 }
 
 h3 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color:aqua;
+  padding: 10px;
 }
 .h2-info {
-  color: black;
+  color: rgb(27, 108, 221);
   padding-bottom: 20px;
   margin-top: 10px;
   font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
 }
 
-h3 {
-  margin-top: 10px;
-  margin-bottom: 10px;
+p {
+  color:#ad719a;
 }
+
 
 #message-text {
   color:aliceblue;
@@ -63,6 +65,7 @@ h3 {
 
 #city-name {
   font-weight: bold;
+  color: rgb(143, 175, 175);
 }
 
 a{
@@ -195,18 +198,15 @@ footer {
   align-items: center;
   justify-content: center;
   margin-right: 20px;
+  margin-top: 50px;
 }
 
 .info-sect {
   display: flex;
   align-items: center;
   flex-direction: row;
-}
+  margin-top: 40px;
 
-.info-sect {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
 }
 
 #email-input, #email-btn {
@@ -216,6 +216,7 @@ footer {
 #email-btn {
   width: 80px;
   height:30px;
+  padding: 5px;
 }
 
 .circle {
@@ -225,39 +226,3 @@ footer {
   background-color: #ad719a;
   margin: 20px;
 }
-
-
-/* #email-sect {
-  display: flex;
-  flex-direction: row;
-}
-
-.email-sign-up {
-  margin-right: 20px;
-  display: flex;
-  justify-content: space-between;
-}
-  
-#quip { 
-  margin-left: 20px;
-}
-  
-#email-input {
-  margin-left: 10px;
-  width: 200px;
-  height: 30px;
-}
-
-#email-btn {
-  width: 100px;
-}
-
-
-.circle {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #ad719a;
-  margin: 20px;
-} */
-  
