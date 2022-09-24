@@ -199,7 +199,12 @@ function handleSubmit(event) {
   // Render City
   newCity.getNumCust();
   newCity.getNumOfCookies();
+
+  /* seek help due to new rows not appending,TA David 
+  caught the render() not being invoked */
   newCity.render();
+
+  // adapted from MDN, and lecture
   tbl.deleteTFoot();
   footerRender();
 
