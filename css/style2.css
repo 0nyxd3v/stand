@@ -20,6 +20,8 @@ header {
   align-items:center;
   justify-content:space-between;
   margin-bottom: 30px;
+  padding-left: 120px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -31,8 +33,12 @@ header {
 }
 
 h2 {
-  color:white;
+  color:rgb(235, 214, 214);
   font-weight: bold;
+  /* padding-left: 50px;
+  padding-right: 50px; */
+  padding: 70px;
+
 }
 
 .h2-info {
