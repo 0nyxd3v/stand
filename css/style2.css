@@ -40,19 +40,21 @@ h2 {
 }
 
 h3 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color:aqua;
+  padding: 10px;
 }
 .h2-info {
-  color: black;
+  color: rgb(27, 108, 221);
   padding-bottom: 20px;
   margin-top: 10px;
   font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
 }
 
-h3 {
-  margin-top: 10px;
-  margin-bottom: 10px;
+p {
+  color:#ad719a;
 }
+
 
 #message-text {
   color:aliceblue;
@@ -63,6 +65,7 @@ h3 {
 
 #city-name {
   font-weight: bold;
+  color: rgb(143, 175, 175);
 }
 
 a{
