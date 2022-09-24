@@ -35,20 +35,29 @@ header {
 h2 {
   color:rgb(235, 214, 214);
   font-weight: bold;
-  /* padding-left: 50px;
-  padding-right: 50px; */
   padding: 70px;
 
 }
 
+h3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 .h2-info {
   color: black;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
 h3 {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+#message-text {
+  color:aliceblue;
+  margin-left: 253px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 
@@ -62,6 +71,10 @@ a{
   transition: 1s;
   text-decoration: none;
   padding-right: 50px;
+}
+
+a:hover, h2:hover {
+  color: #86afd0;
 }
 
 
@@ -81,7 +94,7 @@ article {
   display: flex;
   justify-content: space-between;
   flex-direction: column; 
-  padding: 50px;
+  padding-bottom: 50px;
 }
 
 
@@ -143,7 +156,7 @@ footer {
     
 }
 
-.shirt-container, article {
+.animal-container {
   background-color: #003049;
 }
 
@@ -154,13 +167,14 @@ footer {
 .location {
   background-color: white;
   padding: 10px;
-  height: 230px;
-  margin-bottom: 10px;
+  padding-bottom: 50px;
+  height: 400px;
+  margin-bottom: 20px;
 }
 
 .hours-div {
   background-color: white;
-  padding: 10px;
+  padding: 20px;
   height: 60px;
   /* margin-bottom: 10px; */
 }
