@@ -198,19 +198,18 @@ footer {
   align-items: center;
   justify-content: center;
   margin-right: 20px;
+  margin-top: 40px;
 }
 
 .info-sect {
   display: flex;
   align-items: center;
   flex-direction: row;
+  margin-top: 40px;
+
 }
 
-.info-sect {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-}
+
 
 #email-input, #email-btn {
   margin-left: 10px;
@@ -219,6 +218,7 @@ footer {
 #email-btn {
   width: 80px;
   height:30px;
+  padding: 5px;
 }
 
 .circle {
@@ -228,39 +228,3 @@ footer {
   background-color: #ad719a;
   margin: 20px;
 }
-
-
-/* #email-sect {
-  display: flex;
-  flex-direction: row;
-}
-
-.email-sign-up {
-  margin-right: 20px;
-  display: flex;
-  justify-content: space-between;
-}
-  
-#quip { 
-  margin-left: 20px;
-}
-  
-#email-input {
-  margin-left: 10px;
-  width: 200px;
-  height: 30px;
-}
-
-#email-btn {
-  width: 100px;
-}
-
-
-.circle {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #ad719a;
-  margin: 20px;
-} */
-  
